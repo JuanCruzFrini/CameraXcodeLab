@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#121212">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="9"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--GIRAR CAMARA-->
+    <ImageButton
+        android:id="@+id/changeCamBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="8dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#00000000"
+        android:src="@drawable/ic_baseline_camera_front_24"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/containerTakebtn"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/changeCamBtn2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="8dp"
+        android:backgroundTint="#00000000"
+        android:src="@drawable/ic_baseline_camera_rear_24"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/containerTakebtn"
+        app:layout_constraintEnd_toEndOf="@+id/changeCamBtn" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerTakebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:background="@drawable/gradint_black"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFinder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/filmarbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#00000000"
+            android:src="@drawable/ic_baseline_videocam_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/camera_capture_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/camera_capture_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_margin="40dp"
+            android:background="@drawable/btn"
+            android:backgroundTint="@color/white"
+            android:foreground="@drawable/btn"
+            android:gravity="center"
+            android:src="@drawable/ic_baseline_album_24"
+            android:onClick="grabar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
